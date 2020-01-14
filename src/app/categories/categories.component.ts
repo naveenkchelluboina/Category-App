@@ -9,21 +9,35 @@ import { HttpService } from '../http.service';
 })
 export class CategoriesComponent implements OnInit {
 
-  // categories=[{"id":1, "categoryName":"Groceries"},
-  // {"id":2, "categoryName":"tools"},
-  // {"id":3, "categoryName":"Mise"},
-  // {"id":4, "categoryName":"plan4today"}
+  categories=[
+    {"id":1, "categoryName":"Groceries"},
+  {"id":2, "categoryName":"tools"},
+  {"id":3, "categoryName":"Mise"},
+  {"id":4, "categoryName":"plan4today"}
 
-  // ];
-  categories: any=[];
+  ];
+
+  categories1=[
+    {"id":1, "categoryName":"Groceries",
+    "todo":[
+      {"id":1,"todoName":"Groceries_todo1"},
+      {"id":2,"todoName":"Groceries_todo2"}
+      ]},
+  {"id":2, "categoryName":"tools",
+  "todo":[
+      {"id":1,"todoName":"tools_todo1"},
+      {"id":2,"todoName":"tools_todo2"}
+      ]}
+  ];
+ // categories: any=[];
 add:boolean=false;
 // seleced:boolean:false;
-
+public show:number;
   model:any={};
   constructor(private router:Router,private cat:HttpService) { }
 
   ngOnInit() {
-   this.getCategories();
+  // this.getCategories();
   }
    AddCategory()
     {
@@ -32,11 +46,11 @@ add:boolean=false;
      this.model={};
    }
 
-  getCategories() {
-    return this.cat.getChapters().subscribe((data: {}) => {
-      this.categories = data;
-    })
-  }
+  // getCategories() {
+  //   return this.cat.getChapters().subscribe((data: {}) => {
+  //     this.categories = data;
+  //   })
+  // }
 
   
   selectedCategory(category)
@@ -46,6 +60,12 @@ add:boolean=false;
     this.router.navigate(['/categories/todos',category.categoryName]);
   }
 
-  
+  myfunc(index){
+this.show = index;
+  }
+
+  remove(index){
+this.categories1.splice(index.categories1.tod, 1);
+  }
 
 }

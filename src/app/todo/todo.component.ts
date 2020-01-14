@@ -37,6 +37,7 @@ category;
     this.route.paramMap.subscribe((params:ParamMap)=>{
       let catname=params.get('id');
       this.selectedCategory=catname;
+      
     })
 
   }

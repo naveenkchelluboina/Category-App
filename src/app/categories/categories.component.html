@@ -18,3 +18,19 @@
         <router-outlet></router-outlet>
     </div>
     </div>
+
+    <div *ngFor="let cat1 of categories1, let i=index" (click)="myfunc(i)" >
+      <div class="col1">
+      <ul class="items">
+        <li ><span class="badge">{{cat1.id}}</span> {{cat1.categoryName}}</li>
+        </ul>
+        </div>
+        <div class="col1">
+            <ul class="items" *ngIf="show === i">
+              <li *ngFor="let c of cat1.todo, let n=index"> 
+          {{c.todoName}}
+          <button (click)="remove(n)">X</button>
+        </li>
+      </ul>
+      </div>
+    </div>
