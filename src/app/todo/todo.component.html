@@ -1,0 +1,60 @@
+<div class="container">
+    <h1>{{selectedCategory}}     </h1>
+    <div *ngIf="selectedCategory=='Groceries'">  
+        
+<ul class="items">
+
+    <li *ngFor="let grocery of Groceries;let i=index ">
+        <input
+        type="checkbox" 
+        (click)="saveUsername = !saveUsername"/>
+  {{grocery.todo}}
+        <button (click)="remove(i)">X</button>  
+    </li>
+    <input  type="text" placeholder="todo" name="grocery" [(ngModel)]="model1.todo">
+    <button (click)="AddTodo()">+</button>
+
+</ul>
+</div>
+
+<div *ngIf="selectedCategory=='tools'">        
+    <ul class="items">
+        <li *ngFor="let tool of tools ;let i=index">
+            <input
+        type="checkbox" 
+        (click)="saveUsername = !saveUsername"/>{{tool.todo}}
+            
+            <button (click)="remove(i)">X</button>
+        </li>
+        <input  type="text" placeholder="enter todo" name="tool" [(ngModel)]="model1.todo">
+        <button (click)="AddTodo()">+</button>
+    </ul>
+    </div>
+
+    <div *ngIf="selectedCategory=='Mise'">        
+        <ul class="items">
+            
+            <li *ngFor="let mis of Mise ">
+                <input
+        type="checkbox" 
+        (click)="saveUsername = !saveUsername"/>{{mis.todo}}
+            <button (click)="remove(i)">X</button> </li>
+            <input  type="text" placeholder="enter category" name="mis" [(ngModel)]="model1.todo">
+            <button (click)="AddTodo()">+</button>
+        </ul>
+        </div>
+        <div *ngIf="selectedCategory=='plan4today'">        
+            <ul class="items">
+                <li *ngFor="let plan of plan4today ">
+                    <input
+        type="checkbox" 
+        (click)="saveUsername = !saveUsername"/>{{plan.todo}}
+                    <button (click)="remove(i)">X</button>
+                </li>
+                <input  type="text" placeholder="enter category" name="plan4today" [(ngModel)]="model1.todo">
+                <button (click)="AddTodo()">+</button>
+            </ul>
+        </div>
+            
+        </div>
+

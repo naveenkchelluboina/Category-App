@@ -1,0 +1,8 @@
+{
+"categories":[
+	{"id":1, "categoryName":"Groceries"},
+  {"id":2, "categoryName":"tools"},
+  {"id":3, "categoryName":"Mise"},
+  {"id":4, "categoryName":"plan4today"}
+    ]
+}

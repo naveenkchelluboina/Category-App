@@ -1,0 +1,20 @@
+<div class="hed container">
+    <h1>Todo List</h1>
+</div>
+
+<div class="container">
+    <div class="content lft">
+<ul class="items">
+    <li (click)=selectedCategory(cat) *ngFor="let cat of categories" >{{ cat.categoryName}}</li>
+    <div class="cont">
+        <input  type="text" placeholder="enter category" name="categoryName" [(ngModel)]="model.categoryName">
+       
+        <button (click)="AddCategory()">+</button>
+</div>    
+    </ul>
+    </div>
+
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
+    </div>
