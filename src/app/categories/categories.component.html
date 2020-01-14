@@ -29,7 +29,7 @@
             <ul class="items" *ngIf="show === i">
               <li *ngFor="let c of cat1.todo, let n=index"> 
           {{c.todoName}}
-          <button (click)="remove(c, n)">X</button>
+          <button (click)="remove(cat1, n)">X</button>
         </li>
       </ul>
       </div>

@@ -27,8 +27,14 @@ export class CategoriesComponent implements OnInit {
   "todo":[
       {"id":1,"todoName":"tools_todo1"},
       {"id":2,"todoName":"tools_todo2"}
-      ]}
+      ]},
+  {"id":3, "categoryName":"Groceries3",
+    "todo":[
+      {"id":1,"todoName":"Groceries_todo3-1"},
+      {"id":2,"todoName":"Groceries_todo3-2"}
+      ]},
   ];
+  
  // categories: any=[];
 add:boolean=false;
 // seleced:boolean:false;
@@ -65,32 +71,23 @@ this.show = index;
   }
 
   remove(c,index){
+    console.log("C is ==> " , c);
+    console.log("Index is ==> " + index);
+    c.todo.splice(index, 1)
+      //this.categories1.forEach(ea =>{   
+      // ea.todo. 
+      //ea.todo.splice(index, 1);    
+        
+    //})
 
-  let newArr = [];
-    //let cc = JSON.stringify(c);
-    newArr = c;
-    //console.log(newArr+'-'+index);
-   //cc.splice(index, 1);
-  // this.categories1.forEach(ea =>{
-  //   cc.forEach(ca=>{
+      // for (var key in c) {
+      //   if (c.hasOwnProperty(key)) {
+      //       console.log(key + " -> " + c[key]);   
 
-  //   })
-  //   //ea.todo.splice(index, 1);
-  //   if(ea.id ==cc[0])
-  // })
+      //   }
 
-  for (var key in c) {
-    if (c.hasOwnProperty(key)) {
-      //console.log(c);
-        console.log(key + " -> " + c[key]);
-    this.categories1.forEach(ea =>{
-    
-    //+if(ea.todo.id =)
-
-    })
-
-    }
-}
+      //   }
+  }
 
   }
-}
+
