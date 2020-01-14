@@ -66,14 +66,31 @@ this.show = index;
 
   remove(c,index){
 
-  let newArr = this.categories1;
-    let cc = JSON.stringify(c);
-    console.log(cc+'-'+index);
+  let newArr = [];
+    //let cc = JSON.stringify(c);
+    newArr = c;
+    //console.log(newArr+'-'+index);
    //cc.splice(index, 1);
-  this.categories1.forEach(ea =>{
-    ea.todo.splice(index, 1);
-  })
+  // this.categories1.forEach(ea =>{
+  //   cc.forEach(ca=>{
 
+  //   })
+  //   //ea.todo.splice(index, 1);
+  //   if(ea.id ==cc[0])
+  // })
+
+  for (var key in c) {
+    if (c.hasOwnProperty(key)) {
+      //console.log(c);
+        console.log(key + " -> " + c[key]);
+    this.categories1.forEach(ea =>{
+    
+    //+if(ea.todo.id =)
+
+    })
+
+    }
+}
 
   }
 }
