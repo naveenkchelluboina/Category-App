@@ -64,8 +64,16 @@ public show:number;
 this.show = index;
   }
 
-  remove(index){
-this.categories1.splice(index.categories1.tod, 1);
-  }
+  remove(c,index){
 
+  let newArr = this.categories1;
+    let cc = JSON.stringify(c);
+    console.log(cc+'-'+index);
+   //cc.splice(index, 1);
+  this.categories1.forEach(ea =>{
+    ea.todo.splice(index, 1);
+  })
+
+
+  }
 }
